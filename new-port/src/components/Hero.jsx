@@ -5,7 +5,7 @@ const Hero = () => {
 
   // Typing effect
   useEffect(() => {
-    const phrases = ['Web Developer', 'UI Enthusiast', 'HTML & CSS Wizard', 'JavaScript Developer', 'Bootstrap Expert', 'Creative Coder'];
+    const phrases = ['Web Developer', 'UI Enthusiast', 'JavaScript Developer', 'React.js Developer', 'Creative Coder'];
     let pi = 0, ci = 0, deleting = false;
     let timeoutId;
 
@@ -114,17 +114,31 @@ const Hero = () => {
       <div className="hero-glow hero-glow-2"></div>
 
       <div className="hero-content !px-4 md:!px-12 lg:!px-[7rem]">
-        <div className="hero-inner !flex !flex-col-reverse lg:!flex-row !pt-24 lg:!pt-0 !text-center lg:!text-left">
+        <div className="hero-inner !flex !flex-col lg:!flex-row !pt-0 lg:!pt-0 !text-center lg:!text-left">
           <div className="hero-text-col !w-full lg:!w-[57%] !min-w-0 !flex !flex-col !items-center lg:!items-start !mb-10 lg:!mb-[3rem]">
-            <div className="hero-tag fade-in">✦ Available for Freelance</div>
+            <div className="hero-tag fade-in !-mt-8 lg:!mt-0">✦ Available for Freelance</div>
             <h1 className="hero-title slide-up">
               <span className="hello !text-4xl md:!text-6xl lg:!text-[clamp(3rem,6.5vw,6rem)]">Hey, I'm</span>
               <div className="name-line fade-in"><span className="my-name !text-3xl md:!text-5xl lg:!text-[clamp(2rem,5.2vw,4rem)]">Shadan Akram</span></div>
               <div className="role-text fade-in !text-2xl md:!text-3xl lg:!text-[clamp(2.5rem,2.6vw,2.3rem)]">Frontend Developer</div>
             </h1>
-            <div className="typing-wrap fade-in">
+
+            <div className="hero-img-col !order-none !w-full lg:!hidden !max-w-full !-my-8">
+              <div className="hero-image-wrap !mb-0 !scale-75 md:!scale-100">
+                <div className="hero-image-ring">
+                  <div className="ring-outer"><div className="ring-dot"></div></div>
+                  <div className="ring-inner"></div>
+                  <div className="hero-img">
+                    <img src="assets/shadan-img.png" alt="Shadan Akram" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="typing-wrap fade-in !mb-2 lg:!mb-[1.8rem]">
               &gt;&nbsp;<span className="typed-text" id="typedText" ref={typedTextRef}></span><span className="cursor"></span>
             </div>
+
             <div className="hero-btns fade-in !justify-center lg:!justify-start">
               <a href="#contact" className="btn-primary-custom">Get In Touch</a>
               <a href="assets/Shadan_Akram_CV.pdf" className="btn-outline-custom">Download CV</a>
@@ -135,9 +149,9 @@ const Hero = () => {
               <a href="https://www.instagram.com/shadan_akram09/" target="_blank" rel="noreferrer" className="social-circle"><i className="fab fa-instagram"></i></a>
             </div>
           </div>
-          <div className="hero-img-col !w-full lg:!w-[40%] !max-w-full !mb-10 lg:!mb-0">
-            <div className="hero-image-wrap !mb-0 lg:!mb-[6rem] !scale-75 md:!scale-100">
-              <div className="hero-image-ring" id="heroImg">
+          <div className="hero-img-col !hidden lg:!block lg:!w-[40%] !max-w-full !mb-0">
+            <div className="hero-image-wrap lg:!mb-[6rem] !scale-100">
+              <div className="hero-image-ring">
                 <div className="ring-outer"><div className="ring-dot"></div></div>
                 <div className="ring-inner"></div>
                 <div className="hero-img">

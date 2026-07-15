@@ -74,12 +74,37 @@ const Navbar = () => {
 
   return (
     <nav id="navbar" className={`navbar navbar-expand-lg ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container-fluid px-4">
-        <a className="nav-brand navbar-brand" href="#hero">Shadan<span>Dev</span></a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+      <div className="container-fluid px-2 px-md-4 d-flex align-items-center justify-content-between flex-nowrap">
+        
+        {/* Left Group: Hamburger + Brand */}
+        <div className="d-flex align-items-center gap-3">
+          <button className="navbar-toggler p-1 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <a className="nav-brand navbar-brand m-0" href="#hero">Shadan<span>Dev</span></a>
+        </div>
+        
+        {/* Mobile Theme Toggle */}
+        <button className="theme-btn d-lg-none m-0" aria-label="Toggle Theme" onClick={toggleTheme}>
+          {theme === 'light' ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          )}
         </button>
+
         <div className="collapse navbar-collapse justify-content-end" id="navMenu">
           <ul className="navbar-nav align-items-center gap-1 me-3">
             <li className="nav-item"><a className="nav-link" href="#about">about</a></li>
@@ -89,7 +114,7 @@ const Navbar = () => {
             <li className="nav-item"><a className="nav-link" href="#contact">contact</a></li>
           </ul>
           <a href="#contact" className="nav-cta nav-link me-2">hire me</a>
-          <button id="theme-toggle" className="theme-btn" aria-label="Toggle Theme" onClick={toggleTheme}>
+          <button id="theme-toggle" className="theme-btn d-none d-lg-flex" aria-label="Toggle Theme" onClick={toggleTheme}>
             {theme === 'light' ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             ) : (

@@ -1650,9 +1650,14 @@ footer span {
 ══════════════════════════════════════ */
 @media (max-width: 991.98px) {
 
+  /* Reset brand margin for mobile */
+  .nav-brand {
+    margin-left: 0;
+  }
+
   /* Hero: stack image below text */
   .hero-content {
-    padding: 6rem 2.5rem 3rem;
+    padding: 1rem 2.5rem 3rem;
   }
 
   .hero-inner {
@@ -1660,6 +1665,7 @@ footer span {
     align-items: center;
     text-align: center;
     gap: 2rem;
+    min-height: auto;
   }
 
   .hero-text-col {
@@ -1742,25 +1748,26 @@ footer span {
     font-size: 1.6rem;
   }
 
-  /* Center site brand on small screens */
   .nav-brand {
     font-size: 1.6rem;
-    display: block;
-    position: relative;
-    max-width: calc(100% - 64px); /* reserve space for hamburger */
-    margin: 0 auto;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 0;
   }
-  /* Place hamburger to the immediate left of the centered brand */
+  
+  /* Make mobile dark mode icon smaller */
+  .theme-btn.d-lg-none {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .theme-btn.d-lg-none svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Reset hamburger position */
   .navbar-toggler {
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1100;
+    position: static;
+    transform: none;
+    margin: 0;
   }
 
   /* Hero */
