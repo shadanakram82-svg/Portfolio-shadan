@@ -74,7 +74,7 @@ const Navbar = () => {
 
   return (
     <nav id="navbar" className={`navbar navbar-expand-lg ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container d-flex align-items-center justify-content-between flex-nowrap">
+      <div className="w-full pl-6 pr-2 md:pl-12 md:pr-4 lg:pl-[7rem] lg:pr-4 xl:pr-6 d-flex align-items-center justify-content-between flex-nowrap">
         
         {/* Left Group: Hamburger + Brand */}
         <div className="d-flex align-items-center gap-3">
@@ -106,14 +106,14 @@ const Navbar = () => {
         </button>
 
         <div className="collapse navbar-collapse justify-content-end" id="navMenu">
-          <ul className="navbar-nav align-items-center gap-1 me-3">
+          <ul className="navbar-nav align-items-center gap-1 me-2">
             <li className="nav-item"><a className="nav-link" href="#about">about</a></li>
             <li className="nav-item"><a className="nav-link" href="#skill">skills</a></li>
             <li className="nav-item"><a className="nav-link" href="#project">projects</a></li>
             <li className="nav-item"><a className="nav-link" href="#achievements">achievements</a></li>
             <li className="nav-item"><a className="nav-link" href="#contact">contact</a></li>
           </ul>
-          <a href="#contact" className="nav-cta nav-link me-2">hire me</a>
+          <a href="#contact" className="nav-cta nav-link me-1">hire me</a>
           <button id="theme-toggle" className="theme-btn d-none d-lg-flex" aria-label="Toggle Theme" onClick={toggleTheme}>
             {theme === 'light' ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
