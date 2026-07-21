@@ -74,7 +74,7 @@ const Navbar = () => {
 
   return (
     <nav id="navbar" className={`navbar navbar-expand-lg ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container-fluid px-2 px-md-4 d-flex align-items-center justify-content-between flex-nowrap">
+      <div className="container d-flex align-items-center justify-content-between flex-nowrap">
         
         {/* Left Group: Hamburger + Brand */}
         <div className="d-flex align-items-center gap-3">
