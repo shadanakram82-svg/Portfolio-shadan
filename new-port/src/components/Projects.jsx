@@ -110,7 +110,7 @@ const Projects = () => {
       {/* Section Header */}
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 pt-24 pb-8">
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
+          <h2 className="proj-heading text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight">
             Creative <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5c4] to-[#3b82f6]">Works</span>
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-[#00f5c4] to-[#3b82f6] mt-6 rounded-full mx-auto"></div>
@@ -132,12 +132,12 @@ const Projects = () => {
               {/* Top Row: Index & Badge */}
               <div className="flex items-center gap-6 mb-6 text-[#a0a0a0] mt-10 lg:mt-0">
                 <span className={`text-lg md:text-xl font-bold font-mono tracking-widest ${project.textColor}`}>{project.index}</span>
-                <div className="h-[1px] w-12 bg-white/20"></div>
-                <span className="text-[10px] sm:text-xs tracking-[0.2em] uppercase border border-white/10 px-4 py-1.5 rounded-full">{project.badge}</span>
+                <div className="proj-line-1 h-[1px] w-12 bg-white/20"></div>
+                <span className="proj-badge text-[10px] sm:text-xs tracking-[0.2em] uppercase border border-white/10 px-4 py-1.5 rounded-full">{project.badge}</span>
               </div>
               
               {/* Giant Title */}
-              <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black uppercase tracking-tighter mb-6 leading-[1.1]">
+              <h3 className="proj-title text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black uppercase tracking-tighter mb-6 leading-[1.1]">
                 {project.title.split(' ').map((word, i) => (
                   <span key={i} className="block">{word}</span>
                 ))}
@@ -148,7 +148,7 @@ const Projects = () => {
               
               {/* Stack Info */}
               <div className="mb-6">
-                <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] mb-2 font-semibold">Stack & Architecture</p>
+                <p className="proj-stack-label text-[10px] text-gray-500 uppercase tracking-[0.3em] mb-2 font-semibold">Stack & Architecture</p>
                 <p className={`text-sm md:text-base font-bold tracking-widest ${project.textColor}`}>{project.stack}</p>
               </div>
 
@@ -159,16 +159,16 @@ const Projects = () => {
               </div>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm md:text-base lg:text-lg max-w-md leading-relaxed mb-6">
+              <p className="proj-desc text-gray-400 text-sm md:text-base lg:text-lg max-w-md leading-relaxed mb-6">
                 {project.description}
               </p>
 
               {/* Explore Button */}
-              <a href={project.liveLink} className="group flex items-center justify-between border-b border-white/10 pb-4 mb-12 w-full cursor-pointer no-underline">
-                <span className="text-sm md:text-base lg:text-lg font-bold tracking-[0.15em] uppercase transition-colors text-gray-400 group-hover:text-white no-underline">
+              <a href={project.liveLink} className="proj-explore-link group flex items-center justify-between border-b border-white/10 pb-4 mb-12 w-full cursor-pointer no-underline">
+                <span className="proj-explore-text text-sm md:text-base lg:text-lg font-bold tracking-[0.15em] uppercase transition-colors text-gray-400 group-hover:text-white no-underline">
                   Explore Live Project
                 </span>
-                <span className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 flex items-center justify-center transition-all text-gray-400 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:text-white shadow-[0_0_0_rgba(59,130,246,0)] group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                <span className="proj-explore-icon w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 flex items-center justify-center transition-all text-gray-400 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:text-white shadow-[0_0_0_rgba(59,130,246,0)] group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">
                   <FiArrowUpRight size={18} />
                 </span>
               </a>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,10 +8,22 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
 import './index.css';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isLoading) return;
     // ── LENIS SMOOTH SCROLL ──
     const lenis = new Lenis();
     function raf(time) {
@@ -107,10 +119,11 @@ function App() {
         el.classList.remove('scroll-pop', 'pop-visible');
       });
     };
-  }, []);
+  }, [isLoading]);
 
   return (
     <>
+      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <div id="particles-container"></div>
       <Navbar />
       <Hero />

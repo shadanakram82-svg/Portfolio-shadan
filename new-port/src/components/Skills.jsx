@@ -18,6 +18,7 @@ const skillCategories = [
     id: 1,
     title: "Frontend Development",
     icon: <FiMonitor size={20} />,
+    iconColor: "text-[#0ea5e9]", // light blue
     description: "Building responsive and interactive user interfaces.",
     cardClass: "card-a",
     technologies: [
@@ -33,6 +34,7 @@ const skillCategories = [
     id: 2,
     title: "Programming",
     icon: <FiCode size={20} />,
+    iconColor: "text-[#10b981]", // emerald
     description: "Problem solving and core programming fundamentals.",
     cardClass: "card-b",
     technologies: [
@@ -43,6 +45,7 @@ const skillCategories = [
     id: 3,
     title: "Backend",
     icon: <FiServer size={20} />,
+    iconColor: "text-[#8b5cf6]", // violet
     description: "Learning server-side development and REST APIs.",
     badge: "Learning",
     cardClass: "card-c",
@@ -55,6 +58,7 @@ const skillCategories = [
     id: 4,
     title: "Version Control",
     icon: <FiGitBranch size={20} />,
+    iconColor: "text-[#f97316]", // orange
     description: "Managing source code and collaboration.",
     cardClass: "card-d",
     technologies: [
@@ -66,6 +70,7 @@ const skillCategories = [
     id: 5,
     title: "Development Tools",
     icon: <FiTool size={20} />,
+    iconColor: "text-[#ec4899]", // pink
     description: "Daily development workflow.",
     cardClass: "card-a",
     technologies: [
@@ -78,6 +83,7 @@ const skillCategories = [
     id: 6,
     title: "Deployment",
     icon: <FiUploadCloud size={20} />,
+    iconColor: "text-[#06b6d4]", // cyan
     description: "Deploying production-ready web applications.",
     cardClass: "card-b",
     technologies: [
@@ -89,6 +95,7 @@ const skillCategories = [
     id: 7,
     title: "Design Tools",
     icon: <FiPenTool size={20} />,
+    iconColor: "text-[#f43f5e]", // rose
     description: "Designing clean and modern user interfaces.",
     cardClass: "card-c",
     technologies: [
@@ -100,6 +107,7 @@ const skillCategories = [
     id: 8,
     title: "AI Tools",
     icon: <FiCpu size={20} />,
+    iconColor: "text-[#eab308]", // yellow
     description: "AI-powered tools used during development.",
     cardClass: "card-d",
     technologies: [
@@ -206,7 +214,7 @@ const Skills = () => {
                 
                 <div className="flex items-center justify-between mb-4 z-10 relative">
                   <div className="flex items-center gap-3">
-                    <div className="text-[#00f5c4]">
+                    <div className={cat.iconColor}>
                       {cat.icon}
                     </div>
                     <h3 className="card-title !m-0 !text-xl !pb-0">{cat.title}</h3>
@@ -224,7 +232,7 @@ const Skills = () => {
                   {cat.technologies.map((tech, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm transition-all duration-300 ${tech.color} cursor-default`}
+                      className={`skill-pill flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm transition-all duration-300 ${tech.color} cursor-default`}
                     >
                       <span className="text-base">{tech.icon}</span>
                       <span className="font-medium tracking-wide">{tech.name}</span>
