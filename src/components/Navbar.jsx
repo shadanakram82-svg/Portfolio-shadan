@@ -42,15 +42,13 @@ const Navbar = () => {
   const toggleTheme = (e) => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     
-    let x = 0;
-    let y = 0;
-    if (e && e.currentTarget) {
+    let x = e?.clientX || 0;
+    let y = e?.clientY || 0;
+    
+    if (x === 0 && y === 0 && e?.currentTarget) {
       const rect = e.currentTarget.getBoundingClientRect();
       x = rect.left + rect.width / 2;
       y = rect.top + rect.height / 2;
-    } else if (e) {
-      x = e.clientX;
-      y = e.clientY;
     }
 
     const endRadius = Math.hypot(
@@ -70,10 +68,14 @@ const Navbar = () => {
       overlay.style.zIndex = '999999';
       overlay.style.pointerEvents = 'none';
       overlay.style.clipPath = `circle(0px at ${x}px ${y}px)`;
+      overlay.style.webkitClipPath = `circle(0px at ${x}px ${y}px)`;
       document.body.appendChild(overlay);
 
       const animation = overlay.animate(
-        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
+        { 
+          clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`],
+          webkitClipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] 
+        },
         { duration: 600, easing: 'ease-in-out' }
       );
 
