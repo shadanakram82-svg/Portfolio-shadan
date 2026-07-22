@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
 
 const Navbar = () => {
@@ -84,7 +85,9 @@ const Navbar = () => {
     }
 
     const transition = document.startViewTransition(() => {
-      setTheme(newTheme);
+      flushSync(() => {
+        setTheme(newTheme);
+      });
     });
 
     transition.ready.then(() => {
