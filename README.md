@@ -179,7 +179,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 👤 Author
 
 **Shadan Akram**
-- GitHub: [@https://github.com/shadanakram82-svg/Portfolio-shadan]
+- GitHub: [https://github.com/shadanakram82-svg/Portfolio-shadan]
 - LinkedIn: [https://www.linkedin.com/in/shadan-akram-36167135a/]
 - Live website : [https://portfolio-shadan-akram.vercel.app/]
 
