@@ -2,7 +2,7 @@
 
 A high-performance, visually engaging, and modern personal portfolio website built to showcase projects, skills, and achievements. Engineered with React 19 and Vite, featuring seamless smooth scrolling, GSAP animations, and a flawless dark/light mode transition.
 
-**[Live Demo](https://yourwebsite.com)** 
+**[Live Demo](https://portfolio-shadan-akram.vercel.app/)** 
 
 ![Project Preview](https://via.placeholder.com/1200x600?text=Portfolio+Preview+Image)
 
@@ -73,14 +73,6 @@ A high-performance, visually engaging, and modern personal portfolio website bui
 
 ---
 
-## 📸 Screenshots
-
-![Screenshot 1](https://via.placeholder.com/800x450?text=Hero+Section)
-![Screenshot 2](https://via.placeholder.com/800x450?text=Dark/Light+Mode)
-![Screenshot 3](https://via.placeholder.com/800x450?text=Projects+Section)
-
----
-
 ## ⚙️ Installation
 
 ### Environment Requirements
@@ -91,7 +83,7 @@ A high-performance, visually engaging, and modern personal portfolio website bui
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/shadanakram82-svg/Portfolio-shadan.git
    cd portfolio
    ```
 
