@@ -4,7 +4,7 @@ A high-performance, visually engaging, and modern personal portfolio website bui
 
 **[Live Demo](https://portfolio-shadan-akram.vercel.app/)** 
 
-![Project Preview](https://via.placeholder.com/1200x600?text=Portfolio+Preview+Image)
+![Project Preview](public/assets/portfolio.png)
 
 ![React](https://img.shields.io/badge/React-19.2.7-blue?style=for-the-badge&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-8.1.1-646CFF?style=for-the-badge&logo=vite)
