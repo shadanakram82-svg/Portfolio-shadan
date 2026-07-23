@@ -1,19 +1,53 @@
 import React, { useState } from 'react';
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Contact = () => {
   const [btnText, setBtnText] = useState('Send Message');
   const [isSending, setIsSending] = useState(false);
 
-  const handleSend = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
     setIsSending(true);
-    setBtnText('Message Sent!');
-    setTimeout(() => {
-      setIsSending(false);
-      setBtnText('Send Message');
-    }, 3000);
+    setBtnText("Sending...");
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setBtnText("Message Sent!");
+        form.current.reset();
+
+        setTimeout(() => {
+          setBtnText("Send Message");
+          setIsSending(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error(error);
+
+        setBtnText("Failed!");
+        setIsSending(false);
+
+        setTimeout(() => {
+          setBtnText("Send Message");
+        }, 3000);
+      });
+
   };
 
+
+
+
   return (
+
     <section id="contact">
       <div className="container !px-4 md:!px-8 lg:!px-16">
         <div className="text-center mb-5 reveal">
@@ -54,38 +88,87 @@ const Contact = () => {
 
           <div className="contact-form-col reveal-right !w-full lg:!w-2/3">
             <div className="contact-form !p-6 md:!p-8">
-              <div className="form-row-2 !flex !flex-col md:!flex-row !gap-4 md:!gap-6">
-                <div className="form-group !w-full">
-                  <label className="form-label">YOUR NAME</label>
-                  <input type="text" className="form-control-custom !w-full" placeholder="XYZ" />
-                </div>
-                <div className="form-group !w-full">
-                  <label className="form-label">EMAIL ADDRESS</label>
-                  <input type="email" className="form-control-custom !w-full" placeholder="XYZ@email.com" />
-                </div>
-              </div>
-              <div className="form-group !mt-4 md:!mt-6">
-                <label className="form-label">SUBJECT</label>
-                <input type="text" className="form-control-custom !w-full" placeholder="Project Inquiry" />
-              </div>
-              <div className="form-group !mt-4 md:!mt-6">
-                <label className="form-label">MESSAGE</label>
-                <textarea className="form-control-custom !w-full" placeholder="Tell me about your project..."></textarea>
-              </div>
-              <button 
-                className="btn-primary-custom send-btn !mt-6 !w-full md:!w-auto" 
-                onClick={handleSend}
-                style={isSending ? { background: 'linear-gradient(90deg,var(--clr-accent),var(--clr-accent2))' } : {}}
-              >
-                {isSending ? (
-                  <><i className="fas fa-check me-2"></i>{btnText}</>
-                ) : (
-                  <><i className="fas fa-paper-plane me-2"></i>{btnText}</>
-                )}
-              </button>
-            </div>
+
+              <form ref={form} onSubmit={sendEmail}>
+
+  <div className="form-row-2 !flex !flex-col md:!flex-row !gap-4 md:!gap-6">
+
+    <div className="form-group !w-full">
+      <label className="form-label">YOUR NAME</label>
+      <input
+        type="text"
+        name="from_name"
+        className="form-control-custom !w-full"
+        placeholder="XYZ"
+        required
+      />
+    </div>
+
+    <div className="form-group !w-full">
+      <label className="form-label">EMAIL ADDRESS</label>
+      <input
+        type="email"
+        name="from_email"
+        className="form-control-custom !w-full"
+        placeholder="XYZ@email.com"
+        required
+      />
+    </div>
+
+  </div>
+
+  <div className="form-group !mt-4 md:!mt-6">
+    <label className="form-label">SUBJECT</label>
+    <input
+      type="text"
+      name="subject"
+      className="form-control-custom !w-full"
+      placeholder="Project Inquiry"
+    />
+  </div>
+
+  <div className="form-group !mt-4 md:!mt-6">
+    <label className="form-label">MESSAGE</label>
+    <textarea
+      name="message"
+      className="form-control-custom !w-full"
+      placeholder="Tell me about your project..."
+      rows="6"
+      required
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    className="btn-primary-custom send-btn !mt-6 !w-full md:!w-auto"
+    disabled={isSending}
+    style={
+      isSending
+        ? {
+            background:
+              "linear-gradient(90deg,var(--clr-accent),var(--clr-accent2))",
+          }
+        : {}
+    }
+  >
+    {isSending ? (
+      <>
+        <i className="fas fa-spinner fa-spin me-2"></i>
+        {btnText}
+      </>
+    ) : (
+      <>
+        <i className="fas fa-paper-plane me-2"></i>
+        {btnText}
+      </>
+    )}
+  </button>
+
+</form>
+
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
