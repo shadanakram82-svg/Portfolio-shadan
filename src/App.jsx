@@ -103,9 +103,7 @@ function App() {
     initScrollPop('#project .project-wrap', { stagger: 0.14, threshold: 0.2 });
     initScrollPop('#achievements .ach-title',      { threshold: 0.22, clearReveal: true });
     initScrollPop('#achievements .achievement-card', { stagger: 0.08, threshold: 0.12 });
-    initScrollPop('#contact .text-center.mb-5', { threshold: 0.22, clearReveal: true });
-    initScrollPop('#contact .contact-info-col', { threshold: 0.18, clearReveal: true });
-    initScrollPop('#contact .contact-form-col', { threshold: 0.18, clearReveal: true });
+
 
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {

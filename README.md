@@ -187,6 +187,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-Email - your.email@example.com
+Email -shadanakram82@gmail.com
 
-**[GitHub Repository](https://github.com/yourusername/portfolio)** | **[Live Website](https://yourwebsite.com)**
+**[GitHub Repository](https://github.com/shadanakram82-svg/Portfolio-shadan)** | **[Live Website](https://portfolio-shadan-akram.vercel.app/)**
